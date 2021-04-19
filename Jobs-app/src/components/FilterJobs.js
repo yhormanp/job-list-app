@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from "./Forms/Select";
 
 const FilterJobs = ({ onSearch }) => {
@@ -32,14 +32,15 @@ const FilterJobs = ({ onSearch }) => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
     onSearch(location, jobDescription);
   };
 
-  const onClearFilters = () => {
-    setLocation("Select...");
-    setJobDescription("Select...");
-  };
+  useEffect(() => {
+   async function fetchJobsList() {
+    onSubmit(location, jobDescription);
+   }
+   fetchJobsList();
+  }, [location,jobDescription])
 
   return (
     <form onSubmit={onSubmit}>
@@ -57,20 +58,7 @@ const FilterJobs = ({ onSearch }) => {
         fieldName="Job Description"
         value={jobDescription}
       ></Select>
-      <div className="actions">
-        <input
-          className="btn-block"
-          type="submit"
-          value="Search"
-          onClick={onsubmit}
-        />
-        <input
-          className="btn-block"
-          type="button"
-          value="Clear Filter"
-          onClick={onClearFilters}
-        />
-      </div>
+      
     </form>
   );
 };

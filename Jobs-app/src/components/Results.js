@@ -36,6 +36,14 @@ const Results = ({ jobs, loading }) => {
       </>
     );
   };
+  
+  const renderZeroRows= () => {
+    return(
+      <>
+      {jobs && jobs.length === 0 && <h4>No rows to be shown</h4>}
+      </>
+    )
+  }
 
   return (
     <div>
@@ -47,6 +55,7 @@ const Results = ({ jobs, loading }) => {
         <thead>{renderTableHeader()}</thead>
         <tbody>{renderTableBody()}</tbody>
       </table>
+      {renderZeroRows()}
     </div>
   );
 };

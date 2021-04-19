@@ -42,6 +42,15 @@ const Searches = () => {
     );
   };
 
+  const renderZeroRows= () => {
+    return(
+      <>
+      {searches && searches.length === 0 && <h4>No rows to be shown</h4>}
+      </>
+    )
+  }
+
+
   useEffect(() => {
     async function fetchData() {
       const searchesResponse = await getAllSearches();
@@ -65,6 +74,7 @@ const Searches = () => {
         <thead>{renderTableHeader()}</thead>
         <tbody>{renderTableBody()}</tbody>
       </table>
+      {renderZeroRows()}
     </div>
   );
 };
