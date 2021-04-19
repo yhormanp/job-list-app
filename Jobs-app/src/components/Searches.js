@@ -8,7 +8,7 @@ const Searches = () => {
   const renderTableHeader = () => {
     return (
       <>
-        {searches.length > 0 && (
+        {searches && searches.length > 0 && (
           <tr>
             <th>IP</th>
             <th>Description</th>
@@ -17,6 +17,8 @@ const Searches = () => {
             <th>Search date</th>
           </tr>
         )}
+
+
       </>
     );
   };
@@ -24,7 +26,7 @@ const Searches = () => {
   const renderTableBody = () => {
     return (
       <>
-        {searches.map((search) => (
+        {searches && searches.map((search) => (
           <tr key={search._id} className="job-row">
             <td>{search.ipAddress}</td>
             <td>{search.description}</td>
@@ -56,7 +58,7 @@ const Searches = () => {
       <div>
         <h3>Search Results</h3>
         <h5>
-          {searches.length > 0 ? `${searches.length} searches found` : ""}
+          {searches && searches.length > 0 ? `${searches.length} searches found` : ""}
         </h5>
       </div>
       <table className="styled-table">
