@@ -4,10 +4,12 @@ This is an application created to put in practice knowledge learned from react a
 This project has a front end  created using create-react-app and a backend created using NodeJs with a mongo Database hosted in the cloud
 
 To run this application, you need to run the server in the port 3001, hosted in the folder "server" and from there, run the command:
-npm run start
+- npm install
+- npm run start
 
 The front end can be initialized running the command:
-npm run start
+- npm install
+- npm run start
 
 
 # Getting Started with Create React App
