@@ -4,22 +4,20 @@ import Results from "./Results";
 import "./Jobs.scss";
 
 const Dasbhoard = ({ jobs, onSearchAction, loading }) => {
-
-
   const renderMenu = () => {
     return (
       <div className="menu">
-          <ul>
-            <li>
-              <Link to={'/'}> Job list</Link>
-            </li>
-            <li>
-              <Link to={'/searches'}>Searches made</Link>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            <Link to={"/"}> Job list</Link>
+          </li>
+          <li>
+            <Link to={"/searches"}>Searches made</Link>
+          </li>
+        </ul>
       </div>
-    )
-  }
+    );
+  };
   return (
     <div className="container center">
       {renderMenu()}

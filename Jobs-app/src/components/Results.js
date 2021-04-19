@@ -8,7 +8,7 @@ const Results = ({ jobs, loading }) => {
   const renderTableHeader = () => {
     return (
       <>
-        {jobs.length > 0 && (
+        {jobs && jobs.length > 0 && (
           <tr>
             <th>Job title</th>
             <th>Company</th>
@@ -22,7 +22,7 @@ const Results = ({ jobs, loading }) => {
   const renderTableBody = () => {
     return (
       <>
-        {jobs.map((job) => (
+        {jobs && jobs.map((job) => (
           <tr key={job.id} className="job-row">
             <td>
               <Link to={{ pathname: "/description", state: job }}>
@@ -41,7 +41,7 @@ const Results = ({ jobs, loading }) => {
     <div>
       <div>
         <h3>Search Results</h3>
-        <h5>{jobs.length > 0 ? `${jobs.length} job(s) found` : ""}</h5>
+        <h5>{jobs && jobs.length > 0 ? `${jobs.length} job(s) found` : ""}</h5>
       </div>
       <table className="styled-table">
         <thead>{renderTableHeader()}</thead>
