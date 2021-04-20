@@ -12,6 +12,12 @@ The front end can be initialized running the command:
 - npm run start
 
 
+The database where the searches are stored was created in a cluster using cloud.mongodb.com
+there is a database called job-searches and a collection named searches where  the info of each search is stored.
+
+The configuration in the front end is stored in a file named config.js
+the configuration in the back end is stored in a file name .env 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
