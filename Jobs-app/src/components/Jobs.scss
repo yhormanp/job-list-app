@@ -90,15 +90,23 @@
 }
 
 .menu {
+  display: flex;
+  flex-basis: auto;
+  background-color:#366aff;
+  padding: 15px;
+
   li {
     display: inline;
     margin-right: 20px;
     border-right: 1px solid #ffffff;
+
+    a {
+      color: white;
+      font-weight: 700;
+    }
   }
 
   ul {
-    display: flex;
-    align-items: center;
     list-style: none; /* Eliminamos los bullets */
     margin: 0px; /* Quitamos los margenes */
     padding: 0px; /* Quitamos el padding */
